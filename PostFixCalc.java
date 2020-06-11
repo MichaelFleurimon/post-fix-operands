@@ -1,7 +1,7 @@
 public class PostFixCalc{
   public static void main(String args[]){ 
      MyStack stack = new MyStack();
-     String exp = "(3)4*84/+";
+     String exp = "(10)4+93/*";
      for( int x=0; x<exp.length(); x++){
        String part = exp.substring( x, x+1);
        String ops="*/+-%()";

@@ -1,7 +1,7 @@
 import java.util.*;
-class Main{
+class test{
   public static void main(String args[]){ 
-     String exp = "5  4  +  2  3  + - 9  1  +  *"; 
+     String exp = "100 200 + 2 / 5 * 7 +"; 
         System.out.println(evaluatePostfix(exp)); 
   }
 // Method to evaluate value of a postfix expression 
