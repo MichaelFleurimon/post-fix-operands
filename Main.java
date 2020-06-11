@@ -1,10 +1,10 @@
 class Main {
   public static void main(String args[]){ 
      MyStack stack = new MyStack();
-     String exp = "(10)4+93/*";
+     String exp = "(3)4*84/+";
      for( int x=0; x<exp.length(); x++){
        String part = exp.substring( x, x+1);
-       String ops="*/+-%(";
+       String ops="*/+-%()";
       //if the character is an operator, follow the rules
       //Fill in BELOW
       if(ops.indexOf(part)>-1){
@@ -27,13 +27,10 @@ class Main {
           }
         if(ops.indexOf(part)==5){
           String num="";
-          for(int i=x+1;i<exp.length();i++){
+          for(int i=x+1;i<exp.length()-1;i++){
             String spot=exp.substring(i,i++);
             if(spot.equals(")")){
-              System.out.println(num);
-              num+=".0";
-              double a=Double.parseDouble(num);
-              stack.push(a);
+              stack.push(Double.parseDouble(num+".0"));
               break;
               }
             else{num+=spot;}
@@ -41,7 +38,7 @@ class Main {
         }
       }
        else{   //part is a number, push val onto the stack
-        double val =  Double.parseDouble(part); 
+          double val =  Double.parseDouble(part); 
           stack.push(val);
        }
 
