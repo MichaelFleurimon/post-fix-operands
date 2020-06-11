@@ -27,10 +27,13 @@ class Main {
           }
         if(ops.indexOf(part)==5){
           String num="";
-          for(int i=x+1;i<exp.length()-1;i++){
+          for(int i=x+1;i<exp.length();i++){
             String spot=exp.substring(i,i++);
             if(spot.equals(")")){
-              stack.push(Double.parseDouble(num+".0"));
+              System.out.println(num);
+              num+=".0";
+              double a=Double.parseDouble(num);
+              stack.push(a);
               break;
               }
             else{num+=spot;}
